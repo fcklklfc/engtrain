@@ -1,16 +1,22 @@
-Це прога для кращого запам"ятовування та повторювання англійських слів
+This is a program for remembering and repeating english words
 
-Для початку треба запустити файл engtrain.exe він автоматично створить
-новий файл newwords.txt 
+At first you should run engtrain.exe , it will create new file 
+newwords.txt automatically
 
-Слова можна записувати в файл newwords.txt в стилі:
+You can write words in newwords.txt like:
 
 word:meaning;second meaning;third meaning;etc
 second word:meaning etc
 
-або додавати слова прямо в програмі,графічного інтерфейсу поки нема,
-тому після запуску програми треба ввести "help" щоб подивитись доступні
-команди ,вони всі працюють крім команди move,вона ще в розробці
+or you can add words inside program.Check it out
+I haven't created grafic user interface yet,so after you run program,
+you better write down "help" and this will print out all available 
+commands,they all are working except "move" - it is in development yet
 
+
+Use my program and follow after me on my github:
+http://github.com/fcklklfc/
+use my program and write comments or recommendations
+GUI and new versions will be soon! 
  
 

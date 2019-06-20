@@ -1,4 +1,5 @@
 import random
+
 def update():
 	file = open('newwords.txt')
 	words = file.readlines()  #all file as a list of strings
@@ -89,6 +90,15 @@ def move():
 	#	for key,value in newdictionary.items():
 	#		newwords.write(str(key) + ':' + str(value) + '\n')
 
+def match(word,meanings):
+	for correct in meanings:
+		length = len(correct) / 10 * 7
+		if len(set(word) & set(correct)) >= length:
+			return True
+		#else:
+		#	continue
+
+
 def train(dictionary):
 	print('write "stop" to leave a train')
 	try:
@@ -99,10 +109,14 @@ def train(dictionary):
 			word = random.choice(list(dictionary.keys()))
 			print('word ' + word)
 			answer = input('meaning: ')
-			if answer in dictionary[word]:
+			if match(answer,dictionary[word]):
 				print('Correct')
 				score += 1
 				del dictionary[word]
+			#if answer in dictionary[word]:
+			#	print('Correct')
+			#	score += 1
+			#	del dictionary[word]
 			elif answer =='stop':
 				return update()
 			else:
@@ -110,7 +124,7 @@ def train(dictionary):
 			amount -= 1
 			count += 1
 	except:
-		print('You guessed all words!')
+		print('You have guessed all words!')
 		return update()
 	print('Your score = ' + str(score) + ' of ' + str(count))
 	return update()
