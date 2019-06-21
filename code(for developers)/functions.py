@@ -93,10 +93,14 @@ def move():
 def match(word,meanings):
 	for correct in meanings:
 		length = len(correct) / 10 * 7
-		if len(set(word) & set(correct)) >= length:
+		matching = 0
+		index = 0
+		for x in word:
+			if x == correct[index] or x in correct[index-1:index+1]:
+				matching += 1
+			index += 1
+		if matching >= length:
 			return True
-		#else:
-		#	continue
 
 
 def train(dictionary):
